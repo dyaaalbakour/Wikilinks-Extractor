@@ -15,7 +15,13 @@ import de.l3s.boilerpipe.BoilerpipeProcessingException;
 
 public class ParseSerialiseJson {	
 	
-	public static void main(String[] args) throws IOException {		
+	public static void main(String[] args) throws IOException {	
+		
+		if(args.length<2){
+			System.err.println("No input or output files were specified as arguments.");
+			System.exit(-1);	
+		}
+		
 		TBinaryProtocol protocol = new TBinaryProtocol(
     			new TIOStreamTransport(
     					new BufferedInputStream(
@@ -25,21 +31,20 @@ public class ParseSerialiseJson {
     	while(true){    		
 			try{
 	    		WikiLinkItem item = new WikiLinkItem(protocol);
-				writer.write(
-						item.convertToJson().toString() + "\n");
+				writer.write(item.convertToJson().toString() + "\n");
 				writer.flush();
 				i++;
-				if(i%1000 == 0) 
+				if(i%100 == 0) 
 					System.out.println(i +" wikilink items have been processed...");
 			}catch(TException e){
-				e.printStackTrace();
-				
+				//e.printStackTrace();				
 				break;
 			} catch (BoilerpipeProcessingException e) {
-				e.printStackTrace();
+				//e.printStackTrace();
 				break;
 			}			
     	}
+    	System.out.println("A total of " + i + " wikilikns items have been extracted and serialised into JSON" );
     	writer.close();
 	}
 }

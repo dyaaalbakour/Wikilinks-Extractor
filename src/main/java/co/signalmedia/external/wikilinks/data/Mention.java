@@ -31,17 +31,14 @@ public class Mention {
 			else{
 				if(fieldId==1){
 					wikiUrl = protocol.readString();
-					System.out.println(wikiUrl);
 					
 				}
 				if(fieldId==2){
 					anchorText= protocol.readString();
-					System.out.println(anchorText);
 					
 				}
 				if(fieldId==3){
 					rawTextOffset = protocol.readI32();
-					System.out.println(rawTextOffset);
 				}
 				if(fieldId==4){
 					context =new Context(protocol);

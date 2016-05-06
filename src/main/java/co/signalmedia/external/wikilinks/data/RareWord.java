@@ -7,7 +7,7 @@ import org.apache.thrift.protocol.TProtocolUtil;
 import org.apache.thrift.protocol.TType;
 
 /**
- * This class represent the rare word element in an item in the wiklinks dataste
+ * This class represent the rare word element in an item in the wiklinks dataset
  * 
  * @author dyaaalbakour
  *

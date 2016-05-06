@@ -47,7 +47,7 @@ public class WikiLinkItem {
     		}
     		else{
     			short fieldId = field.id;
-    			if( fieldId ==1) // docId
+    			if(fieldId ==1) // docId
     			{
     				docId = protocol.readI32();
     			}

@@ -37,14 +37,14 @@ public class ParseSerialiseJson {
 				if(i%100 == 0) 
 					System.out.println(i +" wikilink items have been processed...");
 			}catch(TException e){
-				//e.printStackTrace();				
+				e.printStackTrace();				
 				break;
 			} catch (BoilerpipeProcessingException e) {
-				//e.printStackTrace();
+				e.printStackTrace();
 				break;
 			}			
     	}
-    	System.out.println("A total of " + i + " wikilikns items have been extracted and serialised into JSON" );
+    	System.out.println("A total of " + i + " wikilinks items have been extracted and serialised into JSON" );
     	writer.close();
 	}
 }
